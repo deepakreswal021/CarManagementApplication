@@ -10,6 +10,7 @@ import React, { useContext, useEffect } from "react";
 import Register from "./components/Auth/Register";
 import SearchCars from "./components/Car/SearchCar";
 import axios from "axios";
+import dotenv from "dotenv";
 import { Toaster } from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -18,7 +19,7 @@ import { Context } from "./main";
 // import Cars from "./components/Car/Cars";
 
 // import ProtectedRoute from "./components/ProtectedRoute";
-
+dotenv.config();
 const ProtectedRoute = ({ isAuthorized, children }) => {
   return isAuthorized ? children : <Navigate to="/login" />;
 };

@@ -9,7 +9,7 @@ export const Context = createContext({
 const AppWrapper = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [user, setUser] = useState({});
-  const baseurl = "http://localhost:4000";
+  const baseurl = process.env.BASE_URL || "http://localhost:4000";
   // const baseurl = "https://careernavlink-backend.onrender.com";
   return (
     <Context.Provider
